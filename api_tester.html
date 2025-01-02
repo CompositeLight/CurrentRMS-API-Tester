@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CurrentRMS API Tester</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+    }
+    input, select, button {
+      margin-bottom: 15px;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    #response {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    #body {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    padding: 8px;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    }
+    #json-input {
+        margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>CurrentRMS API Tester</h1>
+  <input id="subdomain" type="text" placeholder="Subdomain (e.g., mycompany)" />
+  <input id="apiKey" type="text" placeholder="API Key" />
+  <select id="type">
+    <option value="GET">GET</option>
+    <option value="PUT">PUT</option>
+    <option value="POST">POST</option>
+  </select>
+  <input id="uri" type="text" placeholder="/opportunities" />
+  <div style="display: none;" id="json-input">
+    <label for="body">Request Body (JSON):</label>
+    <textarea id="body"  placeholder='{"key": "value"}'></textarea>
+  </div>
+  
+  <button id="send">Send</button>
+  <div id="response">Response will appear here...</div>
+
+  <script src="api_tester.js"></script>
+</body>
+</html>
