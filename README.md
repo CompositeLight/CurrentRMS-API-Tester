@@ -1,2 +1,2 @@
 # CurrentRMS-API-Tester
-A Chrome Extension that facilitates testing API features
+An unpacked Chrome Extension that facilitates testing API features.
