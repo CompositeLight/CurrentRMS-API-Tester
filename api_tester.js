@@ -20,12 +20,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("send").addEventListener("click", async () => {
+
+    const startTime = Date.now();
+
     const subdomain = document.getElementById("subdomain").value;
     const apiKey = document.getElementById("apiKey").value;
     const type = document.getElementById("type").value;
     const uri = document.getElementById("uri").value;
     const body = document.getElementById("body").value;
     const responseDiv = document.getElementById("response");
+
+    responseDiv.textContent = `Sending ${type} request to ${uri}...`;
 
     localStorage.setItem("subdomain", subdomain);
     localStorage.setItem("apiKey", apiKey);
@@ -66,7 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const data = await response.json();
-      responseDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+      const endTime = Date.now();
+      const duration = endTime - startTime;
+      responseDiv.innerHTML = `<pre>Response after ${duration}ms: <br>${JSON.stringify(data, null, 2)}</pre>`;
+      
     } catch (error) {
       responseDiv.textContent = `Error: ${error.message}`;
     }
