@@ -45,10 +45,30 @@
   <h1>CurrentRMS API Tester</h1>
   <input id="subdomain" type="text" placeholder="Subdomain (e.g., mycompany)" />
   <input id="apiKey" type="text" placeholder="API Key" />
+
+  <select id="preset">
+    <option value="custom">Custom API Call</option>
+    <option value="list-activities">List Activities</option>
+    <option value="list-custom_fields">List Custom Fields</option>
+    <option value="list-custom_field_groups">List Custom Field Groups</option>
+    <option value="create-discussion">Create Discussion</option>
+    <option value="list-discussions">List Discussions</option>
+    <option value="list-inspections">List Inspections</option>
+    <option value="list-inspection_results">List Inspection Results</option>
+    <option value="list-opportunities">List Opportunities</option>
+    <option value="list-opportunity_items">List Opportunity Items</option>
+    <option value="list-members">List Members</option>
+    <option value="list-products">List Products</option>
+    <option value="list-webhooks">List Webhooks</option>
+    <option value="create-webhook">Create Webhook</option>
+    <option value="delete-webhook">Delete Webhook</option>
+  </select>
+
   <select id="type">
     <option value="GET">GET</option>
     <option value="PUT">PUT</option>
     <option value="POST">POST</option>
+    <option value="DELETE">DELETE</option>
   </select>
   <input id="uri" type="text" placeholder="/opportunities" />
   <div style="display: none;" id="json-input">
